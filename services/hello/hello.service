@@ -1,0 +1,12 @@
+[Unit]
+Description=Hello World user service (self-contained)
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Development/systemd-stuff/services/hello
+ExecStart=%h/Development/systemd-stuff/services/hello/hello.sh
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
