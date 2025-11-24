@@ -46,7 +46,7 @@ jcc@machine~/D/s/s/hello❯ systemctl status hello.service
         CPU: 1ms
 ```
 
-This is because the %u and %h are both pointing to root. This is because withint `etc/systemd/system` this service becomes a **system service**. Meaning that %u in this case is a service user and not a login user.
+This is because the %u and %h are both pointing to root. When we copy to the `etc/systemd/system` directory, this service becomes a **system service**. Meaning that %u in this case is a service user and not a login user.
 
 ---
 In order for this to work on anyone else's computer, here are the commands. Need to make sure that hello.sh is executable, then make the `/.config/systemd/user` directory. By doing it this way, we ensure that the %h in the .service file points to the `/home/user` directory
